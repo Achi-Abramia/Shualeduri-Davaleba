@@ -21,15 +21,16 @@ body {
 /* FONTS */
 
 header,
+.checkbox,
 footer {
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
 }
 
-/* END FONTS */
+            /* END FONTS */
 
-/* HEADER */
+            /* HEADER */
 
 .header-container {
     max-width: 1500px;
@@ -73,14 +74,114 @@ footer {
     color: #FFFFFF;
 }
 
-.search {
+.header-search {
     display: none;
-
 }
 
-/* END HEADER */
+            /* END HEADER */
 
-/* MEDIA */
+            /* CHECKBOX MAIN IMAGE */
+
+main {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.checkbox-main-image {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+.checkbox {
+    background-color: #F8F8F8;
+    box-shadow: 0px 4px 25px 0px #C2C2C24F;
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.drop-down {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+    border: 1px solid #0D9CA436;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+}
+
+[type="checkbox"] + label {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    line-height: 16px;
+}
+
+[type="checkbox"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    outline: 1.4px solid #29B24E;
+    background: #FFFFFF;
+}
+
+[type="checkbox"]:checked + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    outline: 1.4px solid #29B24E;
+    background: #29B24E
+}
+
+[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-image:url(images/check.png);
+    background-size: contain;
+}
+
+.Property,
+.Price-range {
+    margin-top: 40px;
+}
+
+.property-checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.price-range-checkbox{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.property-checkbox span,
+.price-range-box span {
+    color: grey;
+}
+
+            /* MEDIA */
 
 @media (max-width: 1540px) {
 
@@ -117,7 +218,7 @@ footer {
         display: none;
     }
 
-    .search {
+    .header-search {
         display: flex;
         justify-content: center;
         align-items: center;
